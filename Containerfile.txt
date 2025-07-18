@@ -1,0 +1,17 @@
+# Dockerfile
+FROM python:3.11-slim
+
+# Install dependencies
+RUN pip install flask debugpy
+
+# Copy application code
+COPY app.py /app.py
+
+# Set working directory
+WORKDIR /
+
+# Expose Flask and Debugpy ports
+EXPOSE 5000 5678
+
+# Run the application
+CMD ["python", "app.py"]
