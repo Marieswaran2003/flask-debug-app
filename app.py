@@ -22,7 +22,7 @@ quotes = [
 
 @app.route("/")
 def home():
-    quote = quotes[random.choice(0, len(quotes))] #off-by-one bug
+    quote = quotes[random.randit(0, len(quotes))] #off-by-one bug
     return jsonify( quote=quote, author="Flask Debugger App")
 
 if __name__ == "__main__":
